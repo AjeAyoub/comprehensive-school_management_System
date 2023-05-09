@@ -31,10 +31,6 @@ Route::group(
             return view('dashboard');
         })->name('dashboard');
 
-        Route::get('/empty', function () {
-            return view('empty');
-        })->name('empty');
-
     })->middleware(['auth', 'verified']);
 
 
