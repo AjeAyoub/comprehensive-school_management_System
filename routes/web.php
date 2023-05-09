@@ -29,12 +29,15 @@ Route::group(
 
         Route::get('/', function () {
             return view('dashboard');
-        })->middleware(['auth', 'verified'])->name('dashboard');
-    });
+        })->name('dashboard');
 
-Route::get('/empty', function () {
-    return view('empty');
-})->middleware(['auth', 'verified'])->name('empty');
+        Route::get('/empty', function () {
+            return view('empty');
+        })->name('empty');
+
+    })->middleware(['auth', 'verified']);
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
