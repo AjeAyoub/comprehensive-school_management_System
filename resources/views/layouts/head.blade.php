@@ -11,6 +11,8 @@
 <!--- Style css -->
 <link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet">
 
+
+
 <!--- Style css -->
 @if (App::getLocale() == 'en' || App::getLocale() == 'fr')
     <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">

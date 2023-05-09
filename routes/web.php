@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\ProfileController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,10 +31,12 @@ Route::group(
 
         Route::get('/', function () {
             return view('dashboard');
-        })->name('dashboard');
+        })->name('dashboard')->middleware(['auth', 'verified']);
 
-    })->middleware(['auth', 'verified']);
+    });
 
+
+Route::resource('/grade',GradeController::class)->middleware('auth');
 
 
 Route::middleware('auth')->group(function () {

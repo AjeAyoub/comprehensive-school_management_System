@@ -23,7 +23,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="elements" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="accordions.html">Grades List</a></li>
+                            <li><a href="{{ route('grade') }}">Grades List</a></li>
                         </ul>
                     </li>
                     <!-- menu item calendar-->
