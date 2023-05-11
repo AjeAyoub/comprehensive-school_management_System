@@ -37,7 +37,7 @@
                 <br><br>
 
 
-                <!--add grade formmodal -->
+                <!--add grade form_modal -->
  
                 <div id="formModal" class="modal fade">
                     <div class="modal-dialog">
@@ -52,19 +52,24 @@
                                 <form action="{{ route('grade.store') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="inputName">Grade Name</label>
+                                        <label for="inputName">Grade Name (en)</label>
                                         <input name="name" type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputName">Grade Name (fr)</label>
+                                        <input name="name_fr" type="text" class="form-control" id="name">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputNotes">Notes</label>
                                         <textarea name="notes" type="text" class="form-control" id="inputNotes"></textarea>
                                     </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Add Grade</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

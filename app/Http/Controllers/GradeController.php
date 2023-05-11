@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostGradeRequest;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,16 @@ class GradeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostGradeRequest $request)
     {
-        //
+        //$validated = $request->validated();
+
+        $Grade = new Grade();
+        $Grade->name = $request->name;
+        $Grade->notes = $request->notes;
+        $Grade->save();
+
+        return to_route('grade.index');
     }
 
     /**
